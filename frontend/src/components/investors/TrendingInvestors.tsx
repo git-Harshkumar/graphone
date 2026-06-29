@@ -47,23 +47,32 @@ export function TrendingInvestors() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {trendingInvestors.map((investor, index) => (
-            <motion.div
-              key={investor.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-            >
-              <TrendingInvestorCard investor={investor} rank={index + 1} />
-            </motion.div>
-          ))}
+          {trendingInvestors.map((investor, index) => {
+            const isActive = activeInvestors.some(ai => ai.id === investor.id);
+            const dealCount = activeInvestors.find(ai => ai.id === investor.id)?.deal_count || 0;
+            return (
+              <motion.div
+                key={investor.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+              >
+                <TrendingInvestorCard
+                  investor={investor}
+                  rank={index + 1}
+                  isActive={isActive}
+                  dealCount={dealCount}
+                />
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
 
-function TrendingInvestorCard({ investor, rank }: { investor: Investor; rank: number }) {
+function TrendingInvestorCard({ investor, rank, isActive, dealCount }: { investor: Investor; rank: number; isActive: boolean; dealCount: number }) {
   const gradientColors = [
     'from-purple-600 via-purple-800 to-purple-900',
     'from-blue-600 via-blue-800 to-blue-900',
@@ -76,8 +85,6 @@ function TrendingInvestorCard({ investor, rank }: { investor: Investor; rank: nu
   ];
 
   const gradient = gradientColors[rank - 1] || gradientColors[0];
-  const isActive = activeInvestors.some(ai => ai.id === investor.id);
-  const dealCount = activeInvestors.find(ai => ai.id === investor.id)?.deal_count || 0;
 
   return (
     <Card variant="dark" className={`relative overflow-hidden bg-gradient-to-br ${gradient}`} hover>
