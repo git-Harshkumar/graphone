@@ -16,9 +16,11 @@ pnpm-lock.yaml
 
 # Build outputs
 dist/
+**/dist/
 build/
+**/build/
 .next/
-**/  .next/
+**/.next/
 out/
 .cache/
 
