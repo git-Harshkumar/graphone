@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Search, Filter, ChevronDown, Zap, Sparkles, TrendingUp, Star, Users, Code, Video, Mic, Bot, Server } from 'lucide-react';
+import { Search, Filter, ChevronDown, ChevronRight, Zap, Sparkles, TrendingUp, Star, Users, Code, Video, Mic, Bot, Server } from 'lucide-react';
 import { SearchInput } from '@/components/ui/SearchInput';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
