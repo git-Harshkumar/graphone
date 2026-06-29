@@ -1,6 +1,6 @@
 'use client';
 
-import { BarChart as RechartsBarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
+import { BarChart as RechartsBarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
@@ -77,7 +77,7 @@ export function BarChart({ data, xKey, yKey, color = DEFAULT_COLOR, height = 300
             dataKey={yKey}
             fill={color}
             radius={[4, 4, 0, 0]}
-            maxBarWidth={50}
+            maxBarSize={50}
             shape={CustomBar}
           >
             {data.map((_, index) => (
