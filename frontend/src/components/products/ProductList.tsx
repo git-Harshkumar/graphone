@@ -5,6 +5,7 @@ import { ChevronRight, TrendingUp, Star, MessageSquare, Tag, ExternalLink, Spark
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Avatar } from '@/components/ui/Avatar';
+import { Button } from '@/components/ui/Button';
 import { useProducts, useTrendingCompanies } from '@/hooks/useApi';
 import { formatNumber, formatDate, cn } from '@/lib/utils';
 import type { Product } from '@/types';
