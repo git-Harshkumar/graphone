@@ -4,7 +4,7 @@ import { forwardRef, type HTMLAttributes } from 'react';
 import { cn } from '@/lib/utils';
 import { Search, X } from 'lucide-react';
 
-export interface SearchInputProps extends HTMLAttributes<HTMLDivElement> {
+export interface SearchInputProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
