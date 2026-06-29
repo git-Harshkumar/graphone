@@ -12,7 +12,7 @@ import { CapitalFlowCTA } from '@/components/investors/CapitalFlowCTA';
 
 export default function InvestorsPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-dark-50 dark:bg-dark-950">
       <InvestorsHero />
       <TrendingInvestors />
       <InvestorCollections />

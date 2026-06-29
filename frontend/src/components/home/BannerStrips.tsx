@@ -69,7 +69,7 @@ function BannerStrip({ config }: { config: typeof bannerConfigs[0] }) {
             </div>
           </div>
           <a
-            href={`/companies?${new URLSearchParams(config.filter as Record<string, string>).toString()}`}
+            href={`/companies?${new URLSearchParams(config.filter as any).toString()}`}
             className="px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-lg font-medium hover:bg-white/30 transition-colors flex items-center gap-2"
           >
             Explore <ArrowUpRight className="h-4 w-4" />
