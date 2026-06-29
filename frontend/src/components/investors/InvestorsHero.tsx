@@ -259,7 +259,7 @@ function InvestorPreviewCard({ investor, rank }: { investor: typeof topInvestors
   );
 }
 
-function ActiveInvestorRow({ investor, rank }: { investor: Investor; rank: number }) {
+function ActiveInvestorRow({ investor, rank }: { investor: Investor & { deal_count?: number }; rank: number }) {
   return (
     <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-dark-50 transition-colors group">
       <div className="w-8 h-8 rounded-full bg-dark-100 text-dark-500 text-xs font-bold flex items-center justify-center group-hover:bg-primary-100 group-hover:text-primary-600 transition-colors">

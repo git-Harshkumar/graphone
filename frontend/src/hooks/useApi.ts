@@ -106,7 +106,7 @@ export function useInvestorCoInvestors(slug: string, limit = 20) {
 }
 
 export function useMostActiveInvestors(days = 90, limit = 20) {
-  return useSWR<{ data: Investor[] }>(
+  return useSWR<{ data: Array<Investor & { deal_count?: number }> }>(
     `/api/investors/most-active?days=${days}&limit=${limit}`,
     fetcher,
     { revalidateOnFocus: false, dedupingInterval: 300000 }
