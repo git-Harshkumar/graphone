@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 233 30 99;
+    --primary-hover: 216 27 96;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased text-dark-900 bg-white dark:bg-dark-950 dark:text-dark-100 transition-colors duration-200;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  ::selection {
+    @apply bg-primary-500/20 text-primary-700;
+  }
+
+  * {
+    @apply border-dark-200 dark:border-dark-800;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500 shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply btn bg-dark-100 dark:bg-dark-800 text-dark-700 dark:text-dark-200 hover:bg-dark-200 dark:hover:bg-dark-750 focus:ring-dark-400 dark:focus:ring-dark-600;
+  }
+
+  .btn-ghost {
+    @apply btn text-dark-600 dark:text-dark-300 hover:bg-dark-100 dark:hover:bg-dark-800 focus:ring-dark-400 dark:focus:ring-dark-600;
+  }
+
+  .btn-outline {
+    @apply btn border border-dark-300 dark:border-dark-700 text-dark-700 dark:text-dark-300 hover:bg-dark-50 dark:hover:bg-dark-900 focus:ring-dark-400 dark:focus:ring-dark-600;
+  }
+
+  .card {
+    @apply bg-white dark:bg-dark-900 rounded-xl border border-dark-200 dark:border-dark-800 shadow-card transition-all duration-300 hover:shadow-card-hover;
+  }
+
+  .card-dark {
+    @apply bg-gradient-to-br from-dark-800 to-dark-900 dark:from-dark-900 dark:to-dark-950 text-white rounded-xl border border-dark-700 dark:border-dark-800 shadow-card transition-all duration-300 hover:shadow-glow;
+  }
+
+  .input {
+    @apply w-full px-4 py-2.5 rounded-lg border border-dark-300 dark:border-dark-700 bg-white dark:bg-dark-900 text-dark-900 dark:text-white placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-50 dark:bg-primary-950/30 text-primary-700 dark:text-primary-300;
+  }
+
+  .badge-dark {
+    @apply badge bg-dark-100 dark:bg-dark-800 text-dark-700 dark:text-dark-300;
+  }
+
+  .badge-success {
+    @apply badge bg-green-50 dark:bg-green-950/20 text-green-700 dark:text-green-300;
+  }
+
+  .badge-warning {
+    @apply badge bg-yellow-50 dark:bg-yellow-950/20 text-yellow-700 dark:text-yellow-300;
+  }
+
+  .section-label {
+    @apply flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-dark-500 dark:text-dark-400;
+  }
+
+  .section-label::before {
+    @apply w-2 h-2 rounded-full bg-primary-500;
+    content: '';
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent;
+  }
+
+  .gradient-border {
+    @apply relative;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #e91e63, #c2185b) border-box;
+    border: 1px solid transparent;
+  }
+
+  .trending-card {
+    @apply relative overflow-hidden rounded-xl bg-gradient-to-br from-dark-800 via-dark-900 to-dark-950 text-white p-6 transition-all duration-300 hover:shadow-glow hover:scale-[1.02];
+  }
+
+  .rank-badge {
+    @apply absolute top-4 right-4 w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 text-white text-sm font-bold flex items-center justify-center shadow-lg;
+  }
+
+  .logo-float {
+    @apply absolute opacity-60 transition-all duration-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* ==========================================================================
+   GLOBAL DARK MODE OVERRIDES
+   Ensures the entire page (not just the navbar) adapts seamlessly to dark mode.
+   ========================================================================== */
+.dark {
+  --bg-main: #020617;     /* dark-950 */
+  --bg-card: #0f172a;     /* dark-900 */
+  --bg-element: #1e293b;  /* dark-800 */
+  --border-color: #334155; /* dark-700 */
+  --text-primary: #f8fafc; /* dark-50 */
+  --text-secondary: #cbd5e1; /* dark-300 */
+  --text-muted: #94a3b8;   /* dark-400 */
+}
+
+.dark body {
+  background-color: var(--bg-main) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Section backgrounds */
+.dark .bg-white {
+  background-color: var(--bg-card) !important;
+}
+
+.dark .bg-dark-50 {
+  background-color: var(--bg-main) !important;
+}
+
+/* Hero gradient section background */
+.dark section.relative.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--bg-main), var(--bg-card)) !important;
+}
+
+/* Header dynamic background when scrolled */
+.dark header.bg-white\/95 {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+}
+
+/* Card overrides */
+.dark .card, 
+.dark [class*="bg-white rounded-"] {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Input, textareas, and select elements */
+.dark input, 
+.dark select, 
+.dark textarea,
+.dark .input {
+  background-color: var(--bg-main) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+/* Text overrides */
+.dark .text-dark-900,
+.dark .text-dark-800,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: var(--text-primary) !important;
+}
+
+.dark .text-dark-700,
+.dark .text-dark-600 {
+  color: var(--text-secondary) !important;
+}
+
+.dark .text-dark-500,
+.dark .text-dark-400 {
+  color: var(--text-muted) !important;
+}
+
+/* Border overrides */
+.dark .border-dark-100,
+.dark .border-dark-200,
+.dark .border-dark-300,
+.dark .divide-dark-50 > *,
+.dark .divide-dark-100 > * {
+  border-color: var(--border-color) !important;
+}
+
+/* Lists and preview rows */
+.dark .bg-dark-50.hover\:bg-dark-100:hover,
+.dark .hover\:bg-dark-50:hover {
+  background-color: var(--bg-element) !important;
+}
+
+.dark .bg-dark-50 {
+  background-color: var(--bg-main) !important;
+}
+
+/* Badge dark variant override */
+.dark .bg-dark-100 {
+  background-color: var(--bg-element) !important;
+  color: var(--text-secondary) !important;
+}
