@@ -175,7 +175,7 @@ function ThemeCard({ theme }: { theme: typeof themes[0] }) {
 
         {/* View All */}
         <a
-          href={`/investors?${new URLSearchParams(theme.filter as Record<string, string>).toString()}`}
+          href={`/investors?${new URLSearchParams(theme.filter as any).toString()}`}
           className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg font-medium hover:bg-white/20 transition-colors"
         >
           Explore Theme <ChevronRight className="h-4 w-4" />

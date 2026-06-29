@@ -99,7 +99,7 @@ function CollectionCard({ collection }: { collection: typeof collections[0] }) {
   const companies = companiesData?.data || [];
   const Icon = collection.icon;
 
-  const viewAllUrl = `/companies?${new URLSearchParams(collection.filter as Record<string, string>).toString()}`;
+  const viewAllUrl = `/companies?${new URLSearchParams(collection.filter as any).toString()}`;
 
   return (
     <a href={viewAllUrl} className="block group">

@@ -45,7 +45,7 @@ export function BrowseByInvestorType() {
   );
 }
 
-function InvestorTypeCard({ type }: typeof investorTypes[0]) {
+function InvestorTypeCard({ type }: { type: typeof investorTypes[0] }) {
   const { data: investorsData } = useInvestors({ ...type.filter, limit: 3 });
   const investors = investorsData?.data || [];
   const Icon = type.icon;
@@ -77,7 +77,7 @@ function InvestorTypeCard({ type }: typeof investorTypes[0]) {
         )}
 
         <a
-          href={`/investors?${new URLSearchParams(type.filter as Record<string, string>).toString()}`}
+          href={`/investors?${new URLSearchParams(type.filter as any).toString()}`}
           className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary-600 hover:text-primary-700"
         >
           Explore <ChevronRight className="h-4 w-4" />

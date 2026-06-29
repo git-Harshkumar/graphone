@@ -63,7 +63,7 @@ function CompanyListColumn({ config }: { config: typeof listConfigs[0] }) {
       </div>
 
       <a
-        href={`/companies?${new URLSearchParams(config.filter as Record<string, string>).toString()}`}
+        href={`/companies?${new URLSearchParams(config.filter as any).toString()}`}
         className="block text-center py-3 text-sm text-primary-600 hover:text-primary-700 font-medium border border-primary-200 rounded-xl hover:bg-primary-50 transition-colors"
       >
         View all {config.label} <ArrowUpRight className="h-4 w-4 inline ml-1" />
