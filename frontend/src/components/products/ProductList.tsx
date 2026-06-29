@@ -121,7 +121,7 @@ function ProductRow({ product }: { product: Product }) {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
             <h3 className="font-semibold text-dark-900 truncate">{product.name}</h3>
-            <Badge variant="dark" className={cn('text-xs', getCategoryColor(product.category))}>
+            <Badge variant="dark" className={cn('text-xs', getCategoryColor(product.category || ''))}>
               {product.category}
             </Badge>
           </div>
