@@ -63,7 +63,7 @@ function CompaniesPageContent() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">AI Companies</h1>
             <p className="text-white/90 text-lg max-w-xl">
-              Discover {data?.total || '50+'} AI companies tracked across funding, growth, and innovation.
+              Discover {data?.meta?.pagination?.total || data?.data?.length || '50+'} AI companies tracked across funding, growth, and innovation.
             </p>
           </motion.div>
 
