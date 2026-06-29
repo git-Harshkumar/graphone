@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ChevronRight, TrendingUp, Star, MessageSquare, Tag, ExternalLink } from 'lucide-react';
+import { ChevronRight, TrendingUp, Star, MessageSquare, Tag, ExternalLink, Sparkles } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Avatar } from '@/components/ui/Avatar';
