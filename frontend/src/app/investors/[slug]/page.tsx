@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/Badge';
 import { Avatar } from '@/components/ui/Avatar';
 import { Button } from '@/components/ui/Button';
 import { useInvestor, useInvestorPortfolio, useInvestorCoInvestors } from '@/hooks/useApi';
-import { formatCurrency, formatNumber, formatDate, getInvestorTypeColor, cn } from '@/lib/utils';
+import { formatCurrency, formatNumber, formatDate, getInvestorTypeColor, getStageColor, cn } from '@/lib/utils';
 import type { Investor, FundingRound } from '@/types';
 import { DonutChart } from '@/components/charts/DonutChart';
 import { BarChart } from '@/components/charts/BarChart';
