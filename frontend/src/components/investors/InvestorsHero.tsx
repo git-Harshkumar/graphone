@@ -7,7 +7,7 @@ import { SearchInput } from '@/components/ui/SearchInput';
 import { Badge } from '@/components/ui/Badge';
 import { useInvestors, useMostActiveInvestors, useTrendingCompanies } from '@/hooks/useApi';
 import { formatCurrency, formatNumber, getInvestorTypeColor } from '@/lib/utils';
-import type { Investor } from '@/types';
+import type { Investor, Company } from '@/types';
 
 const topInvestors = [
   { name: 'Sequoia Capital', slug: 'sequoia-capital', logo: 'https://sequoiacap.com/logo.svg' },
@@ -282,7 +282,7 @@ function ActiveInvestorRow({ investor, rank }: { investor: Investor & { deal_cou
   );
 }
 
-function TrendingPortfolioRow({ company, rank }: { company: typeof trendingData extends { data: infer T } ? T[number] : never; rank: number }) {
+function TrendingPortfolioRow({ company, rank }: { company: Company; rank: number }) {
   return (
     <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-dark-50 transition-colors group">
       <div className="w-8 h-8 rounded-full bg-dark-100 text-dark-500 text-xs font-bold flex items-center justify-center group-hover:bg-primary-100 group-hover:text-primary-600 transition-colors">
